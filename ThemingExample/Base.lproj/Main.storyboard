@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ThemingExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GxQ-Ab-BKJ">
+                                <rect key="frame" x="20" y="613" width="335" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jJI-Wc-Ldi"/>
+                                </constraints>
+                                <state key="normal" title="Change Theme"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="style" value="button"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P78-Hu-uxZ"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZtD-jH-OHv">
+                                <rect key="frame" x="20" y="30" width="335" height="543"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acp-jh-DtB">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="h1"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Treating UI styles like CSS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbc-1h-NCv">
+                                        <rect key="frame" x="0.0" y="29.5" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="h2"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vcj-Yc-wDQ">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="483"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">This is a demo for a Theming engine.
+The main idea after this is to centralize all the visual styles for the UI elements in one file, so all of them can be easily replaced. It's something similar to CSS in web pages.
+Every UI element has an IBOutlet where the user can specify a style name. So if there is a specified style under the current Theme, it will change automatically the appeareance of that UI element.
+In order to do that, there are some extensions using Swizzling when needed.
+For this demo, the only supported UI elements are UILabels, UITextViews and UIButtons.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="body"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Acp-jh-DtB" firstAttribute="top" secondItem="ZtD-jH-OHv" secondAttribute="top" id="1Ak-my-dY7"/>
+                                    <constraint firstItem="Acp-jh-DtB" firstAttribute="leading" secondItem="ZtD-jH-OHv" secondAttribute="leading" id="3Sx-dz-0uz"/>
+                                    <constraint firstAttribute="trailing" secondItem="gbc-1h-NCv" secondAttribute="trailing" id="H6I-PE-cNQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="vcj-Yc-wDQ" secondAttribute="trailing" id="Jwf-69-Oep"/>
+                                    <constraint firstItem="vcj-Yc-wDQ" firstAttribute="leading" secondItem="ZtD-jH-OHv" secondAttribute="leading" id="Pfv-Kc-Ast"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcj-Yc-wDQ" secondAttribute="bottom" id="Qzq-gY-cvU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Acp-jh-DtB" secondAttribute="trailing" id="bKf-3H-28B"/>
+                                    <constraint firstItem="gbc-1h-NCv" firstAttribute="leading" secondItem="ZtD-jH-OHv" secondAttribute="leading" id="rJO-xc-22l"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GxQ-Ab-BKJ" firstAttribute="leading" secondItem="yrK-LT-ehB" secondAttribute="leading" constant="20" id="1dE-pp-vgO"/>
+                            <constraint firstItem="ZtD-jH-OHv" firstAttribute="leading" secondItem="yrK-LT-ehB" secondAttribute="leading" constant="20" id="3rI-bu-V9q"/>
+                            <constraint firstItem="yrK-LT-ehB" firstAttribute="bottom" secondItem="GxQ-Ab-BKJ" secondAttribute="bottom" constant="10" id="Cls-57-h3n"/>
+                            <constraint firstItem="ZtD-jH-OHv" firstAttribute="top" secondItem="yrK-LT-ehB" secondAttribute="top" constant="10" id="GmA-Zj-AdS"/>
+                            <constraint firstItem="yrK-LT-ehB" firstAttribute="trailing" secondItem="ZtD-jH-OHv" secondAttribute="trailing" constant="20" id="SQ8-Rb-UyM"/>
+                            <constraint firstItem="GxQ-Ab-BKJ" firstAttribute="top" secondItem="ZtD-jH-OHv" secondAttribute="bottom" constant="40" id="szi-ra-8Fw"/>
+                            <constraint firstItem="yrK-LT-ehB" firstAttribute="trailing" secondItem="GxQ-Ab-BKJ" secondAttribute="trailing" constant="20" id="tbE-1E-uca"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yrK-LT-ehB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
