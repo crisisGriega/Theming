@@ -34,7 +34,7 @@ Theme.currentTheme = self.stylesheet;
 
 ## Author
 
-Gerardo Garrido, gerardo.garrido.grande@gmail.com
+Gerardo Garrido, @crisisGriega
 
 ## License
 
